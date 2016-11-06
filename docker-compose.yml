@@ -1,0 +1,9 @@
+stream-rtmp:
+  build: .
+  ports:
+    - 8080:80
+    - 1935:1935
+  environment:
+    - "stream_api_host:$STREAM_API_HOST"
+  extra_hosts:
+    - "stream_api_host:$STREAM_API_HOST"
