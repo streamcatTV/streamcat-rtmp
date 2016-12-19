@@ -7,4 +7,4 @@ after_success:
 - git push deploy
 before_install:
 - openssl aes-256-cbc -K $encrypted_54741fbf87fa_key -iv $encrypted_54741fbf87fa_iv
-  -in deploy.enc -out .travis/deploy -d
+  -in .travis/deploy.enc -out .travis/deploy -d
