@@ -1,15 +1,8 @@
-sudo: required
+language: go
 
-language: bash
-services: docker
-
-env:
- - DOCKER_IMAGE=nginx-rtmp
-
-script:
-  - docker build -t ${DOCKER_IMAGE} .
-
-after_script:
-  - docker images
-  - docker run -d -p 1935:1935 -p 8080:80 -t ${DOCKER_IMAGE}
-  - docker ps -a
+after_success:
+  - eval "$(ssh-agent -s)" #start the ssh agent
+  - chmod 600 .travis/deploy_key.pem # this key should have push access
+  - ssh-add .travis/deploy_key.pem
+  - git remote add deploy DEPLOY_REPO_URI_GOES_HERE
+  - git push deploy
