@@ -1,4 +1,4 @@
-language: go
+language: bash
 after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 .travis/deploy
