@@ -27,6 +27,9 @@ rtmp://<server ip>:1935/stream/$STREAM_NAME
 * URL: `rtmp://localhost:1935/stream`
 * Stream Key: `streamname?key=streamkey`
 
+### Auth Check
+TODO
+
 ### Watch Stream
 * In Safari, VLC or any HLS player, open:
 ```
